@@ -1,12 +1,9 @@
 var a = 'Hello';
-first();
+a, b = first(a);
+console.log(a, b);
 
-function first(){
-    var b = 'Salve';
-    second();
-
-    function second(){
-        var c = 'Penis';
-        console.log(a+b+c);
-    }
+function first(a){
+    a = 'Alo';
+    var b = 3
+    return a, b;
 }
