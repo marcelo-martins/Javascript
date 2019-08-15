@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body{
+    margin: 0;
+    background: white;
+    font-family: 'Montserrat', sans-serif; /* coloca na ordem que vd quer de preferencia,
+    se a pessoa nao tiver a primeira, o browser pega a segunda e ai vai*/
+
+}
+
+p, blockquote{
+    font-size: .9em;
+    line-height: 1.6em;
+
+}
+
+ul{
+    list-style-type: none; /* tira os bullets das listas*/
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    text-align: center;
+    /*margem eh fora do elemento e padding eh dentro*/
+    padding: .8em 1.2em ; /*a ordem eh top right bottom lef de descrever, ou usa os
+    padding-tio, padding-right e tal*/
+}
+
+.logo{
+    width: 130px;
+}
+
+header{ /*a classe header engloba o logo e o simbolo ham*/
+    display: flex;
+    justify-content: space-between;
+}

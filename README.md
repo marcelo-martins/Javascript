@@ -1,2 +1,0 @@
-## Javascript
-Testes com Javascript
