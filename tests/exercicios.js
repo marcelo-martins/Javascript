@@ -98,3 +98,72 @@ function deepEqual(a, b){
 // // → false
 // console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
 // // → true
+
+//Se colocar new antes do nome da função, o JS já toma ela como construtor, dando um prototype pra ela e retornando no final
+
+//CLASSES
+class Rabbit {
+    constructor(type) {
+      this.type = type;
+    }
+    speak(line) {
+      console.log(`The ${this.type} rabbit says '${line}'`);
+    }
+  }
+  
+  let killerRabbit = new Rabbit("killer");
+  killerRabbit.speak("Hello K");
+
+//variables in classes on this version of JS
+class MyClass {
+    constructor(foo){
+        this._foo = foo;
+    }
+    get foo() {
+        return this._foo.toUpperCase();
+    }
+    set foo(newFoo){
+        this._foo = newFoo;
+    }
+}
+let classe = new MyClass('bar');
+console.log(classe.foo);
+
+
+//A map
+let ages = {
+    Boris: 39,
+    Liang: 22,
+    Júlia: 62
+  };
+console.log("Is Jack's age known?", "Jack" in ages);
+// → Is Jack's age known? false
+console.log(`Júlia is ${ages["Júlia"]}`);
+// → Júlia is 62  
+
+//or
+let ages = new Map();
+ages.set("Boris", 39);
+ages.set("Liang", 22);
+ages.set("Júlia", 62);
+console.log(`Júlia is ${ages.get("Júlia")}`);
+// → Júlia is 62
+console.log("Is Jack's age known?", ages.has("Jack"));
+// → Is Jack's age known? false
+
+//built-in iterator
+let okIterator = "OK"[Symbol.iterator]();
+console.log(okIterator.next());
+// → {value: "O", done: false}
+console.log(okIterator.next());
+// → {value: "K", done: false}
+console.log(okIterator.next());
+// → {value: undefined, done: true}
+
+
+//If one wants to know if an object was derived from a class
+console.log([1] instanceof Array);
+// → true
+
+//colocar "use strict"; no começo do arquivo ou na primeira linha
+//dentro de uma função faz o JS buscar errs com mais vontade
